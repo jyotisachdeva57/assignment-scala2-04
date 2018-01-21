@@ -2,7 +2,6 @@ package edu.knoldus
 
 import org.apache.log4j.Logger
 
-
 object MenuLauncher {
 
   def main(args: Array[String]): Unit = {
@@ -14,7 +13,6 @@ object MenuLauncher {
     val answer= ClientSideCommission(firstValue).getTotalCommission(List(ClientSideCommission(firstValue), ClientSideCommission(secondValue)))
     log.info(answer.toString)
     log.info(StreetSideCommission(firstValue).getTotalCommission(List(StreetSideCommission(firstValue), StreetSideCommission(thirdValue))))
-   // log.info( Commission(firstValue).getTotalCommission(List(ClientSideCommission(firstValue), StreetSideCommission(thirdValue))))
   }
 
 }
