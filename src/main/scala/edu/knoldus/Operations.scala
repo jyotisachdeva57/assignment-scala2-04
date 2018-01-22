@@ -14,9 +14,9 @@ private sealed trait CommissionDisplay[A <: Commission] {
 
 object Run {
 
-   implicit class TotalDisplayCommission[A <: Commission](x: A) {
+   implicit class TotalDisplayCommission[A <: Commission](xs: List[A]) {
 
-    def getTotalCommission[B <: Commission: TypeTag](xs: List[B]): String = typeOf[B] match {
+    def getTotalCommission[B <: Commission: TypeTag]: String = typeOf[A] match {
       case t if t =:= typeOf[Commission] => "Commission".totalDisplayCommission + xs.map(_.value).sum
       case t if t <:< typeOf[ClientSideCommission] => "Client Commission".totalDisplayCommission + xs.map(_.value).sum
       case t if t <:< typeOf[StreetSideCommission] => "Street Commission".totalDisplayCommission + xs.map(_.value).sum
