@@ -10,9 +10,9 @@ object MenuLauncher {
     val firstValue=1
     val secondValue=2
     val thirdValue=4
-    val answer= ClientSideCommission(firstValue).getTotalCommission(List(ClientSideCommission(firstValue), ClientSideCommission(secondValue)))
-    log.info(answer.toString)
-    log.info(StreetSideCommission(firstValue).getTotalCommission(List(StreetSideCommission(firstValue), StreetSideCommission(thirdValue))))
+    log.info(List(ClientSideCommission(firstValue), ClientSideCommission(secondValue)).getTotalCommission)
+    log.info(List(StreetSideCommission(firstValue), StreetSideCommission(secondValue)).getTotalCommission)
+    log.info(List(ClientSideCommission(firstValue), StreetSideCommission(secondValue)).getTotalCommission)
   }
 
 }
